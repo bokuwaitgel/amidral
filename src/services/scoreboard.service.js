@@ -1,9 +1,9 @@
 import db from "../config/db.js";
 
-export const getScoreboard = () => {
-  const query = "SELECT * FROM scoreboard";
+export const getScoreboard = (name) => {
+  const query = "SELECT * FROM scoreboard WHERE name = ?";
   return new Promise((resolve, reject) => {
-    db.execute(query)
+    db.execute(query, [name])
       .then((result) => resolve(result))
       .catch((err) => reject(err));
   });

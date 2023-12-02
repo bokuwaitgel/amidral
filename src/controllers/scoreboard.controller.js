@@ -1,8 +1,9 @@
 import * as scoreboardService from "../services/scoreboard.service.js";
 
 export const getScoreboard = (req, res) => {
+  const name = req.params.name;
   scoreboardService
-    .getScoreboard()
+    .getScoreboard(name)
     .then((result) => {
       res.status(200).json({
         message: "Scoreboard retrieved successfully",

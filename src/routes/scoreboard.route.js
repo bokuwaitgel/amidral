@@ -9,7 +9,7 @@ const scoreboardRouter = Router();
 const prefix = "/";
 
 // get scoreboard
-scoreboardRouter.get(`/`, getScoreboard);
+scoreboardRouter.get(`/:name`, getScoreboard);
 
 // create scoreboard
 scoreboardRouter.post(`/`, createScoreboard);
